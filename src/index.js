@@ -15,6 +15,9 @@ function onInput(evt) {
   countryInfo.innerHTML = '';
   countryList.innerHTML = '';
   const countryName = evt.target.value.trim();
+  if (!countryName) {
+    return
+  }
   fetchCountries(countryName)
     .then(data => {
       if (data.length > 10) {
